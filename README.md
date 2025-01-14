@@ -53,7 +53,7 @@ In the **LM Test** (Lagrange Multiplier Test) for spatial dependence, several pa
 
 Generally, a p-value smaller than the significance level (e.g., 0.05) suggests the presence of spatial dependence that should be addressed in the model. On the other hand, a p-value greater than the significance level indicates that the assumption of no spatial autocorrelation holds, allowing the use of a standard regression model.
 
-<img width="48" alt="image" src="https://github.com/user-attachments/assets/90957508-902b-42b4-a601-c0e52f75d87b" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/90957508-902b-42b4-a601-c0e52f75d87b" />
 
 ####  Morans I Test
 The **Moran's I Test under Randomization** is used to examine whether there is spatial autocorrelation in the residuals of the regression model. 
