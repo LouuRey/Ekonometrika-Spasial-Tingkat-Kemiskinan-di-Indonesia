@@ -30,11 +30,18 @@
 ## 7. Click Analyze. And then, several summaries will appear.
 #### Model Summary 
 This is the summary of the OLS regression model. In the **Call** section, you can see the syntax of the model. The **Residuals** section shows the distribution of the residuals, which represent the differences between the observed and predicted values for each data point in the model. In the **Coefficients** section, the **Estimate** column provides the coefficient estimates for the intercept and the X variables, forming the general regression model equation. To assess the significance of each parameter, you can check the **Pr(>|t|)** column, also known as the p-value, and compare it to the significance level. If the p-value is smaller than the significance level, the parameter is considered significant in the model, which is also indicated by symbols next to the p-value in the top right corner. 
+
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/2e459d0e-a974-4d74-8aa7-9669649b0f93" />
 
 #### Residual Diagnostics
 In the VIF section, it is used to test for multicollinearity among the predictor variables. If the VIF values for each variable are less than 5 or 10, it indicates that there is no multicollinearity. If a variable's VIF is greater than 10, it can cause unreliable coefficient estimates, leading to inflated standard errors, and thus, the p-values may become misleading. Removing such variables helps to improve model stability, reduce redundancy, and provide more accurate and interpretable results.
+
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/99cef9c3-5ada-43b4-8f0b-5646f50373a9" />
 
+#### 
+
+<img width="48" alt="image" src="https://github.com/user-attachments/assets/90957508-902b-42b4-a601-c0e52f75d87b" />
+
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/c2e14e8f-b88e-48c0-8074-a5c6345bf175" />
 
 
