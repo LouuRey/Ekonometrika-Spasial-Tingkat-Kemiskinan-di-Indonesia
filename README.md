@@ -84,5 +84,6 @@ In this data case, homoscedasticity assumption is met, the LMLag test is signifi
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/74822ddc-ebde-4810-bc62-84ccff4422ab" />
 
 
-
+# FOR MORE:
+## Website creation with R using the R Shiny package, then deployed using shinyapps.io, and redirected through hosting on Netlify. The article example I created is "Spatial Econometrics of Poverty Levels in Indonesia." Everything can be accessed in the following [DRIVE](https://drive.google.com/drive/u/0/folders/1MewJiVDaIcXebkTh1cwrIZ-96936VVus)
 
