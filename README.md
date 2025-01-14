@@ -19,24 +19,24 @@
 
 ## 5. Insert the Y variable (Response Variable) and X variables (Predictor Variables)
 #### The Y variable can only be a single variable, while the X variables can include multiple variables.
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/817ba445-4e84-4b07-b655-ff4bb0d53b78" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/d96a3732-d4d4-4bd4-9db2-b7fee7220cf6" />
 
 ## 6. Insert the Data File ID and Map File ID to merge the data.
 #### For example, if you want to merge the two files based on Province, the Province name in the data file is represented by the column "Provinsi" while the Province name in the map file is represented by the column (usually NAME_1).
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/512281f9-9dd4-47ef-9b95-541a4203fc16" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/12988bbc-6a95-4f1f-8066-43c0a67852c5" />
 
 #### Ensure that the names (in this case, provinces) match those in the map file. If there are discrepancies, adjustments need to be made directly in the Excel file.
 
-## 7. Click Analyze. And then, several summaries will appear.
+## 7. Click Analyze. And then, several summaries will appear
 #### Model Summary 
 This is the summary of the OLS regression model. In the **Call** section, you can see the syntax of the model. The **Residuals** section shows the distribution of the residuals, which represent the differences between the observed and predicted values for each data point in the model. In the **Coefficients** section, the **Estimate** column provides the coefficient estimates for the intercept and the X variables, forming the general regression model equation. To assess the significance of each parameter, you can check the **Pr(>|t|)** column, also known as the p-value, and compare it to the significance level. If the p-value is smaller than the significance level, the parameter is considered significant in the model, which is also indicated by symbols next to the p-value in the top right corner. 
 
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/2e459d0e-a974-4d74-8aa7-9669649b0f93" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/a961e79d-8d64-4100-8355-7965f257580d" />
 
 #### Residual Diagnostics
 In the **VIF** section, it is used to test for multicollinearity among the predictor variables. If the VIF values for each variable are less than 5 or 10, it indicates that there is no multicollinearity. If a variable's VIF is greater than 10, it can cause unreliable coefficient estimates, leading to inflated standard errors, and thus, the p-values may become misleading. Removing such variables helps to improve model stability, reduce redundancy, and provide more accurate and interpretable results. In the **Normality** section, the normality of residuals must be satisfied. This is determined by checking whether the p-value is greater than the significance level. If the p-value is greater than the significance level, it suggests that the residuals are normally distributed, and the assumption of normality is met. In the **Homoscedasticity** section, if the p-value is greater than the significance level, it indicates that the assumption of homoscedasticity is met. This means that the variance of the residuals is constant across all levels of the independent variables. However, if the p-value is smaller than the significance level, it suggests that the assumption is violated, and the residuals exhibit heteroscedasticity, meaning the variance of the residuals is not constant. In such cases, further steps may be needed, such as applying transformations to the dependent variable, using weighted least squares regression, or employing robust standard errors to correct for heteroscedasticity.
 
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/99cef9c3-5ada-43b4-8f0b-5646f50373a9" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/1c10d76f-6884-4fa7-a3c7-738d60add7fb" />
 
 ####  Lagrange Multiplier Test
 In the **LM Test** (Lagrange Multiplier Test) for spatial dependence, several parameters are tested to determine whether there is spatial autocorrelation in the model's residuals. 
@@ -53,7 +53,8 @@ In the **LM Test** (Lagrange Multiplier Test) for spatial dependence, several pa
 
 Generally, a p-value smaller than the significance level (e.g., 0.05) suggests the presence of spatial dependence that should be addressed in the model. On the other hand, a p-value greater than the significance level indicates that the assumption of no spatial autocorrelation holds, allowing the use of a standard regression model.
 
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/90957508-902b-42b4-a601-c0e52f75d87b" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/4eb0ee39-02c3-4979-a9e1-a7fc26ac2281" />
+
 
 ####  Morans I Test
 The **Moran's I Test under Randomization** is used to examine whether there is spatial autocorrelation in the residuals of the regression model. 
@@ -70,6 +71,18 @@ The **Moran's I Test under Randomization** is used to examine whether there is s
 
 In summary, the Moran's I test helps determine whether spatial patterns are present in the residuals. If the p-value is larger than the significance level, the assumption of no spatial autocorrelation holds, indicating that the residuals do not exhibit spatial dependence.
 
-<img width="480" alt="image" src="https://github.com/user-attachments/assets/c2e14e8f-b88e-48c0-8074-a5c6345bf175" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/2b7ec536-8020-43de-8d37-ea21d3a7a6ef" />
+
+## 8. Choose the best spatial model based on the OLS assumption tests
+
+#### You can see the distribution map of each variable
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/ec7eed4f-0dc9-4225-b620-477bd4ea8046" />
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/0c9ac0bd-b461-46bf-ae72-e7ef6d484cae" />
+
+#### Best Spatial Model?
+In this data case, homoscedasticity assumption is met, the LMLag test is significant, so the Lag model becomes the best model. Additionally, a way to compare one spatial model to another is by finding the model with the lowest AIC value
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/74822ddc-ebde-4810-bc62-84ccff4422ab" />
+
+
 
 
