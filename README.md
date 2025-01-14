@@ -34,13 +34,41 @@ This is the summary of the OLS regression model. In the **Call** section, you ca
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/2e459d0e-a974-4d74-8aa7-9669649b0f93" />
 
 #### Residual Diagnostics
-In the VIF section, it is used to test for multicollinearity among the predictor variables. If the VIF values for each variable are less than 5 or 10, it indicates that there is no multicollinearity. If a variable's VIF is greater than 10, it can cause unreliable coefficient estimates, leading to inflated standard errors, and thus, the p-values may become misleading. Removing such variables helps to improve model stability, reduce redundancy, and provide more accurate and interpretable results.
+In the **VIF** section, it is used to test for multicollinearity among the predictor variables. If the VIF values for each variable are less than 5 or 10, it indicates that there is no multicollinearity. If a variable's VIF is greater than 10, it can cause unreliable coefficient estimates, leading to inflated standard errors, and thus, the p-values may become misleading. Removing such variables helps to improve model stability, reduce redundancy, and provide more accurate and interpretable results. In the **Normality** section, the normality of residuals must be satisfied. This is determined by checking whether the p-value is greater than the significance level. If the p-value is greater than the significance level, it suggests that the residuals are normally distributed, and the assumption of normality is met. In the **Homoscedasticity** section, if the p-value is greater than the significance level, it indicates that the assumption of homoscedasticity is met. This means that the variance of the residuals is constant across all levels of the independent variables. However, if the p-value is smaller than the significance level, it suggests that the assumption is violated, and the residuals exhibit heteroscedasticity, meaning the variance of the residuals is not constant. In such cases, further steps may be needed, such as applying transformations to the dependent variable, using weighted least squares regression, or employing robust standard errors to correct for heteroscedasticity.
 
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/99cef9c3-5ada-43b4-8f0b-5646f50373a9" />
 
-#### 
+####  Lagrange Multiplier Test
+In the **LM Test** (Lagrange Multiplier Test) for spatial dependence, several parameters are tested to determine whether there is spatial autocorrelation in the model's residuals. 
+
+1. **RSerr (Residuals Error)** tests spatial autocorrelation in the residuals without considering spatial lag effects. If the p-value is greater than the significance level, it indicates no spatial autocorrelation in the residuals.
+
+2. **RSlag (Lag Error)** examines spatial autocorrelation based on the influence of spatial lag, meaning the dependence between residuals at different locations. A p-value smaller than the significance level suggests the presence of spatial autocorrelation, indicating the need for a model that accounts for spatial dependence.
+
+3. **adjRSerr (Adjusted Residuals Error)** is an adjusted version of RSerr, accounting for spatial dependence in the adjusted residuals. If the p-value is greater than the significance level, it indicates no significant spatial dependence in the adjusted residuals.
+
+4. **adjRSlag (Adjusted Lag Error)** is the adjusted version of RSlag, which tests spatial dependence by considering the adjusted residuals with spatial lag effects. A p-value smaller than the significance level suggests the presence of spatial autocorrelation in the adjusted residuals.
+
+5. **SARMA (Spatial Auto-Regressive Model)** tests the overall spatial autocorrelation by considering both spatial dependence in residuals and the influence of spatial lag. If the p-value is slightly smaller than the significance level, it indicates the potential need for a model that accounts for spatial autocorrelation.
+
+Generally, a p-value smaller than the significance level (e.g., 0.05) suggests the presence of spatial dependence that should be addressed in the model. On the other hand, a p-value greater than the significance level indicates that the assumption of no spatial autocorrelation holds, allowing the use of a standard regression model.
 
 <img width="48" alt="image" src="https://github.com/user-attachments/assets/90957508-902b-42b4-a601-c0e52f75d87b" />
+
+####  Morans I Test
+The **Moran's I Test under Randomization** is used to examine whether there is spatial autocorrelation in the residuals of the regression model. 
+
+- The **Moran I statistic** indicates the degree of spatial autocorrelation in the residuals. Positive values suggest that similar residuals are spatially clustered, while negative values suggest they are dispersed.
+
+- The **expectation** represents the value of the Moran's I statistic under the null hypothesis of no spatial autocorrelation, which assumes that the residuals are randomly distributed across space.
+
+- The **variance** shows how much the Moran's I statistic is expected to vary under the null hypothesis.
+
+- The **standard deviate** measures how far the observed Moran's I statistic is from its expected value in terms of standard deviations.
+
+- The **p-value** tests whether the observed Moran's I statistic is significantly different from what would be expected under the null hypothesis. A p-value greater than the significance level (e.g., 0.05) suggests no significant spatial autocorrelation in the residuals, while a p-value smaller than the significance level indicates the presence of spatial autocorrelation.
+
+In summary, the Moran's I test helps determine whether spatial patterns are present in the residuals. If the p-value is larger than the significance level, the assumption of no spatial autocorrelation holds, indicating that the residuals do not exhibit spatial dependence.
 
 <img width="480" alt="image" src="https://github.com/user-attachments/assets/c2e14e8f-b88e-48c0-8074-a5c6345bf175" />
 
